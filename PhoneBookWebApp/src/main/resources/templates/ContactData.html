@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Contact Data</h1>
+<a href="/contact/register">+Add new Record</a>
+	<table border="1">
+		<tr>
+			<td>Contact Id</t>
+			<td>Contact Name</t>
+			<td>Email</t>
+			<td>Contact No</t>
+			<td>Created Date</t>
+			<td>Updated Date</t>
+			<td>Action</t>
+
+		</tr>
+		<tr th:each="ob:${list}">
+			<td th:text="${ob.cid}"></t>
+			<td th:text="${ob.cname}"></t> <td th:text="${ob.email}">
+			</t><td th:text="${ob.contactno}"></t>
+			<td th:text="${ob.createdDate}"></t>
+			<td th:text="${ob.updatedDate}"></t>
+			<td>
+				<a th:href="@{/contact/delete?id={id}(id=${ob.cid})}">Delete</a>
+				|<a th:href="@{/contact/edit?id={id}(id=${ob.cid})}">Edit</a>
+			</td>
+		</tr>
+	</table>
+	<span th:text="${deletemsg}"></span>
+
+</body>
+</html>

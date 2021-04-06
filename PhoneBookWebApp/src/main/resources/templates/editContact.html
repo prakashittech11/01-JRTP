@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2 style="color: maroon;">Contact Edit Page</h2>
+
+	<form th:action="@{/contact/update}" th:method="POST"
+		th:object="${contact}">
+		<table border="1">
+		
+			<tr>
+				<td>Id::</td>
+				<td><input type="text" th:field="*{cid}"></td>
+			</tr>
+			<tr>
+				<td>Name::</td>
+				<td><input type="text" th:field="*{cname}"></td>
+			</tr>
+			<tr>
+				<td>Email::</td>
+				<td><input type="email" th:field="*{email}"></td>
+			</tr>
+			<tr>
+				<td>Contact No::</td>
+				<td><input type="text" th:field="*{contactno}"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Update"></td>
+				<td><input type="reset" value="Refresh"></td>
+			</tr>
+		</table>
+
+	</form>
+
+</body>
+</html>

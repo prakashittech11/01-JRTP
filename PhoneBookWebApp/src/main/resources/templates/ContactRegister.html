@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 style="color: pink; background-color: blue; text-align: center;">Phone
+		Book Web App</h1>
+<p th:text="${success}"></p>
+	<form action="save" method="POST">
+		<table border="1">
+			<tr>
+				<td>Name::</td>
+				<td><input type="text" name="cname"></td>
+			</tr>
+			<tr>
+				<td>Email::</td>
+				<td><input type="email" name="email"></td>
+			</tr>
+			<tr>
+				<td>Contact No::</td>
+				<td><input type="text" name="contactno"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Save"></td>
+				<td><input type="reset" value="Refresh"></td>
+			</tr>
+		</table>
+		<a href="/contact/display">Get All Contact Record</a>
+	</form>
+</body>
+</html>
